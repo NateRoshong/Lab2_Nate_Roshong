@@ -6,7 +6,7 @@ public class Main {
 		Node current = L1.head;
 		while (current != null) {
 			product *= current.num;
-			L2.add(product);
+			L2.addtail(product);
 			current = current.next;
 		}
 
@@ -15,11 +15,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		LinkedList L1 = new LinkedList();
-		L1.add(1);
-		L1.add(2);
-		L1.add(3);
-		L1.add(4);
-		L1.add(5);
+		L1.addtail(1);
+		L1.addtail(2);
+		L1.addtail(3);
+		L1.addtail(4);
+		L1.addtail(5);
 
 		LinkedList L2 = CMult(L1);
 

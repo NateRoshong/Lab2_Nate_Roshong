@@ -2,7 +2,7 @@ public class LinkedList {
 	Node head;
 	Node tail;
 
-	public void add(int value) {
+	public void addtail(int value) {
 		Node newNode = new Node(value);
 		if (head == null) {
 			head = newNode;
