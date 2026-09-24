@@ -1,3 +1,4 @@
+//the root of the node
 public class Node {
     int num;
     Node next;
