@@ -24,6 +24,62 @@ public class LinkedList {
 		}
 	}
 
+	// Swaps 2 nodes positions
+	public void swap(int i, int j) {
+		if (i < 0 || j < 0 || i == j || head == null) {
+			return;
+		}
+		if (i > j) {
+			int temp = i;
+			i = j;
+			j = temp;
+		}
+
+		Node previousI = null;
+		Node nodeI = head;
+		for (int position = 0; position < i && nodeI != null; position++) {
+			previousI = nodeI;
+			nodeI = nodeI.next;
+		}
+
+		Node previousJ = null;
+		Node nodeJ = head;
+		for (int position = 0; position < j && nodeJ != null; position++) {
+			previousJ = nodeJ;
+			nodeJ = nodeJ.next;
+		}
+
+		if (nodeI == null || nodeJ == null) {
+			return;
+		}
+
+		if (nodeI.next == nodeJ) {
+			if (previousI == null) {
+				head = nodeJ;
+			} else {
+				previousI.next = nodeJ;
+			}
+			nodeI.next = nodeJ.next;
+			nodeJ.next = nodeI;
+		} else {
+			if (previousI == null) {
+				head = nodeJ;
+			} else {
+				previousI.next = nodeJ;
+			}
+			previousJ.next = nodeI;
+			Node nextI = nodeI.next;
+			nodeI.next = nodeJ.next;
+			nodeJ.next = nextI;
+		}
+
+		if (tail == nodeI) {
+			tail = nodeJ;
+		} else if (tail == nodeJ) {
+			tail = nodeI;
+		}
+	}
+
 	//delets a specified node from the linked list
 	public void delete(int value) {
 		if (head == null) {

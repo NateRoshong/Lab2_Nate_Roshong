@@ -30,6 +30,19 @@ public class Main {
 		System.out.println("");
 		L2.delete(12);
 		System.out.println("List 2 after deleting 12: " + L2);
+
+		LinkedList swapTest = new LinkedList();
+		swapTest.addtail(22);
+		swapTest.addtail(33);
+		swapTest.addtail(44);
+		swapTest.addtail(55);
+		swapTest.addtail(66);
+		swapTest.addtail(77);
+		swapTest.addtail(88);
+		swapTest.addtail(99);
+		System.out.println("\nBefore swap(2, 5): " + swapTest);
+		swapTest.swap(2, 5);
+		System.out.println("After swap(2, 5): " + swapTest);
 	}
 }
 
